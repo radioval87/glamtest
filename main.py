@@ -1,18 +1,9 @@
-import time
+from fastapi import FastAPI
 
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-
-driver = webdriver.Chrome()
+from routers.instagram import instagram_router
 
 
-driver.get(f"https://www.instagram.com/therock/")
+app = FastAPI(debug=True)
 
-for _ in range(1):
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(2)
 
-imgaes = driver.find_elements(By.XPATH, '//div[@class="_aagv"]/img')
-urls = [image.get_attribute('src') for image in imgaes]
-
-print(urls)
+app.include_router(instagram_router)
