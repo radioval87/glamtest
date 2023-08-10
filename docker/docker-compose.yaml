@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+
+  glamtest-webapp:
+    image: glamtest:latest
+    container_name: glamtest-webapp
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 5000:5000
