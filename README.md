@@ -29,11 +29,11 @@ docker-compose up
 ```
 
 ## Test
+Swagger documentation will be available at `http://0.0.0.0:5000/docs`
 
-There is a Test client that sends multiple queries at once.
-
+There is also a Test client that sends multiple queries at once.
+To run it:
 Python3 should be already installed.  
-To start working with the client, firstly you need to: 
 
 1. Create a virtual environment using
 
